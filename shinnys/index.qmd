@@ -1,0 +1,35 @@
+---
+title: "PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO"
+author: "Elias Rosa, Lucas Lacerda e Ornella Scardua"
+date: "2022-03-23"
+comments: false
+listing:
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+title-block-banner: true
+image: "image.png"
+---
+
+------------------------------------------------------------------------
+
+# O aplicativo
+
+Propõe-se a analisar diferentes tipos de delineamentos experimentais que explicam a variabilidade do escoamento das chuvas para a absorção pelo sistema radicular do café arábica, levando-se em consideração fatores como a espécie das árvores (`tree_sp`), o terreno onde os cafezais foram plantados (`plot`), a distância dos cafeeiros para as árvores de sombra (`distance`) e a precipitação de chuva (`rainfall_size`).
+
+A base de dados considerada contém 2.100 observações, em que todas representam informações colhidas das árvores das espécies *Tabebuia rosea* e *Simarouba glauca* no período de 26/05/2013 a 11/10/2013 na região cafeeira de Carazo, na Nicarágua.
+
+#  **Os autores**
+
+\- **Elias Rosa Ribeiro Junior** cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: elias.junior\_\@outlook.com
+
+\- **Lucas Lacerda de Oliveira** cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: lucaslcroliveira\@gmail.com
+
+\- **Ornella Scardua Ferreira** cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: ornella.ferreira\@edu.ufes.br.
+
+[Link do Shinny](https://eliasrribeiro.shinyapps.io/planej_exp_cafe/)
+
+atualizado em 30/06/2022.

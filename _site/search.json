@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Elias Rosa",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJun 30, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJun 27, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "code\n\n\nphyton\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJun 30, 2022\n\n\nElias Ribeiro - Atividade Ciência de Dados\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMar 23, 2022\n\n\nElias Rosa, Lucas Lacerda e Ornella Scardua\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "Graduando de Estatística - Universidade Federal do Espírito Santo."
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -26,5 +26,26 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/Análise de dados com python/index.html",
+    "href": "posts/Análise de dados com python/index.html",
+    "title": "Comparação de genomas - Análise de dados com phyton",
+    "section": "",
+    "text": "Pretende-se comparar duas sequências de DNA: SARS-CoV-2 identificado na cidade de Wuhan (China) e o Virus da Influenza A identificado na California (US).\nO DNA é uma molécula presente em todos os seres vivos, que é responsável por armazenar as caracterı́sticas hereditárias. Ela é composta por sequências de nucleotı́deos, que podem ser de quatro tipos: Adenina (A), Timina (T), Citosina (C) ou Guanina (G).\nNeste estudo de caso, queremos avaliar se estruturas com funções parecidas de organismos diferentes têm diferenças. Para isso vamos avaliar a quantidade de pares de nucleotı́deos.\nOs dados utilizados para este estudo referem-se a sequências de DNA disponı́veis nos seguintes links: SARS-CoV-2 Wuhan-Hu-1 e Virus da Influenza A (California/07/2009(H1N1)).\nPara comparar as duas estruturas requere-se um mapa de calor (Heatmap) que permita realizar a comparação dos pares de nucleotı́deos. Comente sobre os resultados encontrados.\n\n\nlibrary(reticulate)\n\nWarning: package 'reticulate' was built under R version 4.2.1\n\n\n\n#Livrarias\nimport numpy as np\n#import matplotlib.pyplot as plt\n\n\n############ Influenza\n\ninfluenza = open('influenza.txt').read() # Ler o arquivo\n\ninfluenza = influenza.replace(\"\\n\",\"\") # retirar os \"\\n\"\npares_influenza = [] #iniciar\nfor i in range(len(influenza)-1):   #pegar os pares de genomas\n  pares_influenza.append(influenza[i]+influenza[i+1])\n\n#print(pares_influenza)\n\n\n#Somar as combinações de pares de genomas\na=pares_influenza\nAT= a.count('AT')\nAC= a.count('AC')\nAG= a.count('AG')\nAA= a.count('AA')\nTA= a.count('TA')\nTT= a.count('TT')\nTC= a.count('TC')\nTG= a.count('TG')\nCA= a.count('CA')\nCT= a.count('CT')\nCC= a.count('CC')\nCG= a.count('CG')\nGA= a.count('GA')\nGT= a.count('GT')\nGC= a.count('GC')\nGG= a.count('GG')\n\n\nmatriz = np.array([AA,AT,AC,AG,TA,TT,TC,TG,CA,CT,CC,CG,GA,GT,GC,GG])\nmatriz_influenza = matriz.reshape(4,4)\nprint(matriz_influenza)\n\n[[174 118  75 144]\n [ 49  71  82 117]\n [128  68  69  37]\n [160  62  77 109]]\n\n\n\nplt.imshow(matriz_influenza, cmap = 'Blues', origin=\"lower\")\nplt.xlabel('Índice da linha'); plt.ylabel('Índice da coluna')\nplt.xticks((0,1,2,3),['A','T','C','G'])\nplt.yticks([3, 2, 1, 0],['G','C','T','A'])\nplt.title(\"Influenza A\")\n_ = plt.colorbar()\n\n\n\n####### Covid-19\ncovid = open('covid.txt').read()\n\ncovid = covid.replace(\"\\n\",\"\")\npares_covid = []\nfor i in range(len(covid)-1):\n  pares_covid.append(covid[i]+covid[i+1])\n\n#print(pares_covid)\n\na=pares_covid\nAT= a.count('AT')\nAC= a.count('AC')\nAG= a.count('AG')\nAA= a.count('AA')\nTA= a.count('TA')\nTT= a.count('TT')\nTC= a.count('TC')\nTG= a.count('TG')\nCA= a.count('CA')\nCT= a.count('CT')\nCC= a.count('CC')\nCG= a.count('CG')\nGA= a.count('GA')\nGT= a.count('GT')\nGC= a.count('GC')\nGG= a.count('GG')\n\nmatriz = np.array([AA,AT,AC,AG,TA,TT,TC,TG,CA,CT,CC,CG,GA,GT,GC,GG])\nmatriz_covid = matriz.reshape(4,4)\nprint(matriz_covid)\n\n[[2880 2308 2023 1742]\n [2377 3215 1413 2589]\n [2084 2081  888  439]\n [1612 1990 1168 1093]]\n\n\n\nplt.imshow(matriz_covid, cmap = 'Blues', origin=\"lower\")\nplt.xlabel('Índice da linha'); plt.ylabel('Índice da coluna')\nplt.xticks((0,1,2,3),['A','T','C','G'])\nplt.yticks([3, 2, 1, 0],['G','C','T','A'])\nplt.title(\"Covid-19\")\n_ = plt.colorbar()"
+  },
+  {
+    "objectID": "shinnys/index.html",
+    "href": "shinnys/index.html",
+    "title": "PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO",
+    "section": "",
+    "text": "O aplicativo\nPropõe-se a analisar diferentes tipos de delineamentos experimentais que explicam a variabilidade do escoamento das chuvas para a absorção pelo sistema radicular do café arábica, levando-se em consideração fatores como a espécie das árvores (tree_sp), o terreno onde os cafezais foram plantados (plot), a distância dos cafeeiros para as árvores de sombra (distance) e a precipitação de chuva (rainfall_size).\nA base de dados considerada contém 2.100 observações, em que todas representam informações colhidas das árvores das espécies Tabebuia rosea e Simarouba glauca no período de 26/05/2013 a 11/10/2013 na região cafeeira de Carazo, na Nicarágua.\n\n\nOs autores\n- Elias Rosa Ribeiro Junior cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: elias.junior_@outlook.com\n- Lucas Lacerda de Oliveira cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: lucaslcroliveira@gmail.com\n- Ornella Scardua Ferreira cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: ornella.ferreira@edu.ufes.br.\nLink do Shinny\natualizado em 30/06/2022.\n\n\n\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/shinnys/index.html",
+    "href": "posts/shinnys/index.html",
+    "title": "PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO",
+    "section": "",
+    "text": "O aplicativo\nPropõe-se a analisar diferentes tipos de delineamentos experimentais que explicam a variabilidade do escoamento das chuvas para a absorção pelo sistema radicular do café arábica, levando-se em consideração fatores como a espécie das árvores (tree_sp), o terreno onde os cafezais foram plantados (plot), a distância dos cafeeiros para as árvores de sombra (distance) e a precipitação de chuva (rainfall_size).\nA base de dados considerada contém 2.100 observações, em que todas representam informações colhidas das árvores das espécies Tabebuia rosea e Simarouba glauca no período de 26/05/2013 a 11/10/2013 na região cafeeira de Carazo, na Nicarágua.\n\n\nOs autores\n- Elias Rosa Ribeiro Junior cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: elias.junior_@outlook.com\n- Lucas Lacerda de Oliveira cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: lucaslcroliveira@gmail.com\n- Ornella Scardua Ferreira cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: ornella.ferreira@edu.ufes.br.\nLink do Shinny\natualizado em 30/06/2022.\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

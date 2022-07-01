@@ -1,7 +1,15 @@
 {
   "listingMap": {
     "index.qmd": [
-      "posts"
+      "posts",
+      "odds_risco.html",
+      "contents"
+    ],
+    "shinnys\\index.qmd": [
+      "B3049D40"
+    ],
+    "posts\\shinnys\\index.qmd": [
+      "B3049D40"
     ]
   }
 }

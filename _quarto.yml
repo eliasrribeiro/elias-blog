@@ -2,17 +2,27 @@ project:
   type: website
 
 website:
-  title: ""
+  title: "Home"
   navbar:
     right:
       - about.qmd
+      - text: Posts
+        menu:
+        - text: Risco Relativo e Odds ratio - como calcular e suas principais diferenças
+          href: https://observatorioobstetricobr.org/livro-e-tutoriais/risco-relativo-e-odds-ratio-como-calcular-e-suas-principais-diferencas/
+        - text: Relatórios com RMarkdown
+          href: https://observatorioobstetricobr.org/livro-e-tutoriais/relatorios-com-rmarkdown/
+      - text: Shinnys
+        menu: 
+          - text: PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO
+            href: shinnys/index.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/eliasrribeiro
+      - icon: linkedin
+        href: https://www.linkedin.com/in/eliasrribeiro
 format:
   html:
-    theme: cosmo
+    theme: minty
     css: styles.css
 
 editor: visual

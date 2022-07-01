@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Elias Rosa, Lucas Lacerda e Ornella Scardua">
+<meta name="dcterms.date" content="2022-03-23">
 
-<title>Home - About</title>
+<title>Home - PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,21 +20,24 @@ ul.task-list{list-style: none;}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -52,9 +57,39 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles.css">
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -63,7 +98,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Home</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -72,7 +107,7 @@ ul.task-list{list-style: none;}
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">About</a>
+    <a class="nav-link" href="../../about.html">About</a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-posts" role="button" data-bs-toggle="dropdown" aria-expanded="false">Posts</a>
@@ -91,7 +126,7 @@ ul.task-list{list-style: none;}
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-shinnys" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shinnys</a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-shinnys">    
         <li>
-    <a class="dropdown-item" href="./shinnys/index.html">
+    <a class="dropdown-item" href="../../shinnys/index.html">
  <span class="dropdown-text">PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO</span></a>
   </li>  
     </ul>
@@ -102,7 +137,7 @@ ul.task-list{list-style: none;}
  </a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/eliasrribeiro"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="../../www.linkedin.com/in/eliasrribeiro"><i class="bi bi-linkedin" role="img">
 </i> 
  </a>
   </li>  
@@ -118,39 +153,71 @@ ul.task-list{list-style: none;}
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpeg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">PLANEJAMENTO DE EXPERIMENTOS NO SISTEMA DE CAFÉ SOMBREADO</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Elias Rosa, Lucas Lacerda e Ornella Scardua </p>
+          </div>
   </div>
-</header><main class="content" id="quarto-document-content">
-<p>Graduando de Estatística - Universidade Federal do Espírito Santo.</p>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 23, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<hr>
+<section id="o-aplicativo" class="level1">
+<h1>O aplicativo</h1>
+<p>Propõe-se a analisar diferentes tipos de delineamentos experimentais que explicam a variabilidade do escoamento das chuvas para a absorção pelo sistema radicular do café arábica, levando-se em consideração fatores como a espécie das árvores (<code>tree_sp</code>), o terreno onde os cafezais foram plantados (<code>plot</code>), a distância dos cafeeiros para as árvores de sombra (<code>distance</code>) e a precipitação de chuva (<code>rainfall_size</code>).</p>
+<p>A base de dados considerada contém 2.100 observações, em que todas representam informações colhidas das árvores das espécies <em>Tabebuia rosea</em> e <em>Simarouba glauca</em> no período de 26/05/2013 a 11/10/2013 na região cafeeira de Carazo, na Nicarágua.</p>
+</section>
+<section id="os-autores" class="level1">
+<h1><strong>Os autores</strong></h1>
+<p>- <strong>Elias Rosa Ribeiro Junior</strong> cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: elias.junior_@outlook.com</p>
+<p>- <strong>Lucas Lacerda de Oliveira</strong> cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: lucaslcroliveira@gmail.com</p>
+<p>- <strong>Ornella Scardua Ferreira</strong> cursa bacharelado em Estatística na Universidade Federal do Espírito Santo (UFES). Contato: ornella.ferreira@edu.ufes.br.</p>
+<p><a href="https://eliasrribeiro.shinyapps.io/planej_exp_cafe/">Link do Shinny</a></p>
+<p>atualizado em 30/06/2022.</p>
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/eliasrribeiro" class="about-link">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/eliasrribeiro" class="about-link">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.instagram.com/eliasribeiro_/" class="about-link">
-    <i class="bi bi-instagram"></i>
-     <span class="about-link-text">Instagram</span>
-  </a>
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
 </div>
+<div class="listing-no-matching d-none">
+No matching items
 </div>
- <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;
