@@ -1,0 +1,68 @@
+---
+title: "Web-Scraping - Raspando dados sobre população no ES"
+author: "Elias Ribeiro - Atividade Ciência de Dados"
+date: "2022-07-18"
+categories: [code, phyton in r, analysis]
+image: "image.png"
+---
+
+```{r,warning=FALSE,message=FALSE}
+library(reticulate)
+```
+
+```{python}
+import numpy as np
+from bs4 import BeautifulSoup
+import pandas as pd
+import requests
+```
+
+Neste Post, queremos fazer raspagem dos dados na tabela "Lista de municípios do Espírito Santo por população" no site abaixo.
+
+![](images/paste-9EC51473.png)
+
+```{python}
+url = requests.get('https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Esp%C3%ADrito_Santo_por_popula%C3%A7%C3%A3o')
+print(url.status_code)
+```
+
+Primeiro inspecionamos a tabela no site e procuramos o código fonte para podermos aplicar no código
+
+![](images/paste-5957E6C7.png)
+
+Encontrada a tabela no código fonte, podemos utilizar a função *find* para encontrar nossa tabela da seguinte forma :
+
+```{python}
+html = BeautifulSoup(url.content, 'html.parser')
+tabela = html.find('table')
+titulos = [i.text for i in tabela.find_all('th')]
+print(titulos)
+titulos[2] = 'Populacao'#tirando o "\n"
+print(titulos)
+```
+
+Agora vamos raspar os dados e organizar em um Data Frame
+
+```{python}
+df = pd.DataFrame(columns = titulos)
+for j in tabela.find_all('tr')[1:]:
+    row_data = j.find_all('td')
+    row = [i.text for i in row_data]
+    length = len(df)
+    df.loc[length] = row
+df.head()
+```
+
+Como podemos observar, os valores das populações tem um "\\n" e a população de *Castelo* tem um "\[2\]" junto com o valor da população, vamos tirá-lo da seguinte forma:
+
+```{python,warning=FALSE}
+populacao = df['Populacao']
+print(populacao[16])
+populacao[16]='38.070\n'
+len(populacao)
+populacao = [i.split('\n')[0].replace(' ', '.').replace('\xa0', '.') for i in populacao]
+populacao = [float(i) for i in populacao]
+# populacao
+df['Populacao'] = populacao
+print(df)
+```

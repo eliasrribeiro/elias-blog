@@ -26,6 +26,7 @@ library(reticulate)
 
 ```{python}
 import numpy as np
+import matplotlib.pyplot as plt
 ```
 
 ```{python}
@@ -68,7 +69,7 @@ print(matriz_influenza)
 ```
 
 ```{python,eval=FALSE}
-import matplotlib.pyplot as plt
+
 
 plt.imshow(matriz_influenza, cmap = 'Blues', origin="lower")
 plt.xlabel('Índice da linha'); plt.ylabel('Índice da coluna')
